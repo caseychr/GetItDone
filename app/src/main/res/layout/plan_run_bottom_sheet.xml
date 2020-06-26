@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/run_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_round_background"
+    android:orientation="vertical"
+    android:padding="12dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="20dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <include
+        android:id="@+id/layout_play"
+        layout="@layout/layout_run_metrics"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/bottomSheetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="Plan A Run"
+        android:layout_gravity="center"
+        style="@style/BottomSheetTitle"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/colorPrimary"
+        android:visibility="visible"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
+
+    <include
+        android:id="@+id/layout_run_spinner"
+        android:visibility="visible"
+        layout="@layout/layout_run_spinner"/>
+
+    <Button
+        android:id="@+id/startBtn"
+        android:text="Start"
+        android:textColor="@android:color/white"
+        android:background="@drawable/ic_button_background"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "477142897204",
+    "firebase_url": "https://get-it-done-10a7b.firebaseio.com",
+    "project_id": "get-it-done-10a7b",
+    "storage_bucket": "get-it-done-10a7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477142897204:android:11a0dbe9aff61166237061",
+        "android_client_info": {
+          "package_name": "com.ccasey.getitdone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477142897204-0e6j92v89vjje5f79mmljg3ivm5oopcb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ccasey.getitdone",
+            "certificate_hash": "6b2e2fefce1019cbdb0457b06fd68d69fde14454"
+          }
+        },
+        {
+          "client_id": "477142897204-5mjr9s2752qmnd171adr45dqo3dg6q1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3FgwXsIJNdEuLo5tZNNXv217h0wWiMBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477142897204-5mjr9s2752qmnd171adr45dqo3dg6q1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

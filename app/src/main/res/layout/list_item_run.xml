@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="30dp"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/colorLightGrey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/routeImg"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_history" />
+
+        <TextView
+            android:id="@+id/listItemDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="Duration:"
+            style="@style/RunItemTextTheme"
+            app:layout_constraintStart_toEndOf="@+id/routeImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/listItemDurationNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemDuration"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/listItemDurationUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="minutes"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemDurationNum"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/listItemDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="Distance:"
+            style="@style/RunItemTextTheme"
+            app:layout_constraintStart_toEndOf="@+id/routeImg"
+            app:layout_constraintTop_toBottomOf="@+id/listItemDuration" />
+
+        <TextView
+            android:id="@+id/listItemDistanceNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemDistance"
+            app:layout_constraintTop_toBottomOf="@id/listItemDurationNum"/>
+
+        <TextView
+            android:id="@+id/listItemDistanceUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="miles"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemDistanceNum"
+            app:layout_constraintTop_toBottomOf="@+id/listItemDurationUnit" />
+
+        <TextView
+            android:id="@+id/listItemPace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="Pace:"
+            style="@style/RunItemTextTheme"
+            app:layout_constraintStart_toEndOf="@+id/routeImg"
+            app:layout_constraintTop_toBottomOf="@+id/listItemDistance" />
+
+        <TextView
+            android:id="@+id/listItemPaceNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemPace"
+            app:layout_constraintTop_toBottomOf="@id/listItemDistanceNum"/>
+
+        <TextView
+            android:id="@+id/listItemPaceUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="minutes per mile"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemPaceNum"
+            app:layout_constraintTop_toBottomOf="@+id/listItemDistanceUnit" />
+
+        <TextView
+            android:id="@+id/listItemDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date:"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            style="@style/RunItemTextTheme"
+            app:layout_constraintStart_toEndOf="@+id/routeImg"
+            app:layout_constraintTop_toBottomOf="@+id/listItemPace" />
+
+        <TextView
+            android:id="@+id/listItemDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            android:text="Monday 02/12/20 1:30 PM"
+            style="@style/RunItemTextNumTheme"
+            app:layout_constraintStart_toEndOf="@+id/listItemDate"
+            app:layout_constraintTop_toBottomOf="@+id/listItemPaceUnit" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

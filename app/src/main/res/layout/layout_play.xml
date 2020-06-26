@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/stopImgCircle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/playImgCircle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_circle_primary" />
+
+    <ImageView
+        android:id="@+id/stopImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@drawable/ic_stop"
+        app:layout_constraintBottom_toBottomOf="@+id/stopImgCircle"
+        app:layout_constraintEnd_toEndOf="@+id/stopImgCircle"
+        app:layout_constraintStart_toStartOf="@+id/stopImgCircle"
+        app:layout_constraintTop_toTopOf="@+id/stopImgCircle" />
+
+    <ImageView
+        android:id="@+id/playImgCircle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tracker"
+        app:layout_constraintStart_toEndOf="@id/stopImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_circle_primary" />
+
+    <ImageView
+        android:id="@+id/playImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@drawable/ic_play_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/playImgCircle"
+        app:layout_constraintEnd_toEndOf="@+id/playImgCircle"
+        app:layout_constraintStart_toStartOf="@+id/playImgCircle"
+        app:layout_constraintTop_toTopOf="@+id/playImgCircle" />
+
+    <TextView
+        android:id="@+id/tracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23:05"
+        style="@style/AchievementValueTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playImgCircle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trackerUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time To Go"
+        style="@style/RunItemTextTheme"
+        app:layout_constraintEnd_toEndOf="@+id/tracker"
+        app:layout_constraintStart_toStartOf="@+id/tracker"
+        app:layout_constraintTop_toBottomOf="@+id/tracker" />
+</androidx.constraintlayout.widget.ConstraintLayout>

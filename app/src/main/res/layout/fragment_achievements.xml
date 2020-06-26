@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/numRuns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23"
+        style="@style/AchievementValueTheme"
+        app:layout_constraintBottom_toTopOf="@+id/totalRunTV"
+        app:layout_constraintStart_toStartOf="@id/totalRunTV"
+        app:layout_constraintEnd_toEndOf="@id/totalRunTV"/>
+
+    <TextView
+        android:id="@+id/totalRunTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Fastest Run"
+        style="@style/AchievementTextTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/middleGuideline"
+        app:layout_constraintBottom_toTopOf="@id/horizontalLine1" />
+
+    <TextView
+        android:id="@+id/numDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23"
+        style="@style/AchievementValueTheme"
+        app:layout_constraintBottom_toTopOf="@+id/totalDistanceTV"
+        app:layout_constraintStart_toStartOf="@id/totalDistanceTV"
+        app:layout_constraintEnd_toEndOf="@id/totalDistanceTV" />
+
+    <TextView
+        android:id="@+id/totalDistanceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longest Run"
+        style="@style/AchievementTextTheme"
+        app:layout_constraintBottom_toTopOf="@id/horizontalLine2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/middleGuideline"/>
+
+    <TextView
+        android:id="@+id/numDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23"
+        style="@style/AchievementValueTheme"
+        app:layout_constraintBottom_toTopOf="@+id/totalDurationTV"
+        app:layout_constraintStart_toStartOf="@id/totalDurationTV"
+        app:layout_constraintEnd_toEndOf="@id/totalDurationTV" />
+
+    <TextView
+        android:id="@+id/totalDurationTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Furthest Run"
+        style="@style/AchievementTextTheme"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/horizontalLine1"
+        app:layout_constraintStart_toStartOf="@id/middleGuideline"/>
+
+    <TextView
+        android:id="@+id/numAvgDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23"
+        style="@style/AchievementValueTheme"
+        app:layout_constraintBottom_toTopOf="@+id/avgDistanceTV"
+        app:layout_constraintStart_toStartOf="@id/avgDistanceTV"
+        app:layout_constraintEnd_toEndOf="@id/avgDistanceTV" />
+
+    <TextView
+        android:id="@+id/avgDistanceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Best Mile Time"
+        style="@style/AchievementTextTheme"
+        app:layout_constraintEnd_toStartOf="@+id/middleGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/horizontalLine2" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
