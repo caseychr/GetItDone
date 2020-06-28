@@ -68,13 +68,14 @@ fun TextView.setLongToTextTimer(l: Long, onlySeconds: Boolean  = false) {
     }
 }
 
-fun CountDownTimer.createCountDownTimer(textView: TextView, timer: Long) {
+fun CountDownTimer.createCountDownTimer(textView: TextView, timer: Long, textView2: TextView? = null) {
      object : CountDownTimer(timer, INTERVAL) {
         override fun onFinish() {
         }
 
         override fun onTick(millisUntilFinished: Long) {
             textView.setLongToTextTimer(millisUntilFinished)
+            textView2?.setLongToTextTimer((timer - millisUntilFinished)+ INTERVAL)
             //layout_play.metricTimeNum.setLongToTextTimer((timer - millisUntilFinished)+ INTERVAL)
             //layout_play.tracker.setLongToTextTimer(millisUntilFinished)
         }
@@ -82,7 +83,7 @@ fun CountDownTimer.createCountDownTimer(textView: TextView, timer: Long) {
     }.start()
 }
 
-fun CountDownTimer.endTimer() {
-    this.cancel()
+fun CountDownTimer?.endTimer() {
+    this?.cancel()
 }
 

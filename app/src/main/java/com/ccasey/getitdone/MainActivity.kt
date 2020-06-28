@@ -34,8 +34,4 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment).commit()
     }
-
-    override fun onPause() {
-        super.onPause()
-    }
 }

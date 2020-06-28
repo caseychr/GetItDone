@@ -77,7 +77,7 @@ class RunningFragment : Fragment(), PermissionsListener {
     lateinit var viewLayout: View
     lateinit var sheetBehavior: BottomSheetBehavior<View>
     lateinit var bottomSheet: LinearLayout
-    lateinit var countdownTimer: CountDownTimer
+    var countdownTimer: CountDownTimer? = null
 
     var mDistance: String? = null
     var mDuration: String? = null
@@ -157,7 +157,8 @@ class RunningFragment : Fragment(), PermissionsListener {
                     //TODO pause 2 timers, save metrics and remain duration to shared prefs
                     val currentRun = Run((layout_play.metricDistanceNum.text).toString().toFloat(), layout_play.metricTimeNum.setTextToLongTimer(),
                         0.0f, System.currentTimeMillis(), emptyList(), emptyList())
-                    countdownTimer.endTimer()
+                    countdownTimer?.endTimer()
+                    countdownTimer = null
 
                     viewModel.setDurationLeft(layout_play.tracker.setTextToLongTimer())
                     viewModel.setCurrentRunMetrics(currentRun)
@@ -168,6 +169,7 @@ class RunningFragment : Fragment(), PermissionsListener {
                 } else {
                     viewModel.getCurrentRunMetrics()
                     viewModel.getDurationLeft()
+                    println("getDurationLeft()")
 
                     //TODO move to resourceView
                     playImg.setImageDrawable(resources.getDrawable(R.drawable.ic_pause))
@@ -261,7 +263,7 @@ class RunningFragment : Fragment(), PermissionsListener {
         }
     }
 
-    private fun initCountdownTimer(timer: Long) : CountDownTimer {
+    private fun initCountdownTimer(timer: Long) {
         countdownTimer = object : CountDownTimer(timer, INTERVAL) {
             override fun onFinish() {
             }
@@ -271,8 +273,7 @@ class RunningFragment : Fragment(), PermissionsListener {
                 layout_play.tracker.setLongToTextTimer(millisUntilFinished)
             }
 
-        }
-        return countdownTimer
+        }.start()
     }
 
     private fun initPreWorkoutCountdownTimer(timer : Long) {
@@ -280,7 +281,7 @@ class RunningFragment : Fragment(), PermissionsListener {
         layoutQuickStartBtn.quickStartTV.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
         val timer = object : CountDownTimer(5000, INTERVAL) {
             override fun onFinish() {
-                initCountdownTimer(timer).start()
+                initCountdownTimer(timer)
                 layoutQuickStartBtn.visibility = View.GONE
             }
 
@@ -485,10 +486,7 @@ class RunningFragment : Fragment(), PermissionsListener {
     private val getDurationLeft = object : ResourceView<Long> {
         override fun showData(data: Long) {
             println("DURATION GOT: $data")
-            countdownTimer.createCountDownTimer(layout_play.tracker, data)
-            /*layout_play.playImgCircle.playImg.setImageDrawable(resources.getDrawable(R.drawable.ic_pause))
-            layout_play.playImgCircle.stopImgCircle.visibility = View.GONE
-            layout_play.playImgCircle.stopImg.visibility = View.GONE*/
+            countdownTimer?.createCountDownTimer(layout_play.tracker, data)
         }
 
         override fun showLoading(isLoading: Boolean) {
@@ -496,7 +494,7 @@ class RunningFragment : Fragment(), PermissionsListener {
         }
 
         override fun showError(error: Throwable) {
-
+            println("DURATION GOT:ERROR")
         }
 
     }
